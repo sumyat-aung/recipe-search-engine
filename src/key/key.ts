@@ -1,0 +1,2 @@
+export const ALAN_API_KEY = 'd147126979efc3d49425b8755ef7dbad2e956eca572e1d8b807a3e2338fdd0dc/stage'
+
