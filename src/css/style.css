@@ -13,3 +13,7 @@
 .active {
   background-color: rgba(75, 85, 99, 0.307);
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

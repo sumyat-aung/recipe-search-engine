@@ -25,6 +25,7 @@ const Header: React.FC = () => {
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.4)",
+      zIndex: 1000,
     },
   };
 

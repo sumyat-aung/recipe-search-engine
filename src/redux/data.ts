@@ -15,7 +15,7 @@ export const recipeApi = createApi({
         // for feed
         getSearchResult: builder.query({
             query: (q) => ({
-                url: `recipes/complexSearch?apiKey=${FOOD_API_KEY}&query=${q}`,
+                url: `recipes/complexSearch?apiKey=${FOOD_API_KEY}&query=${q}&number=50`,
             }),
         }),
 

@@ -8,7 +8,7 @@ const RecipeCard = ({ recipe }: any) => {
   return (
     <Link
       to={`/recipe/:${recipe?.id}`}
-      className="border-black w-[280px] shadow relative z-10"
+      className="border-black sm:w-[280px] w-[200px] shadow relative z-10"
     >
       <div className="relative">
         <img
@@ -17,12 +17,12 @@ const RecipeCard = ({ recipe }: any) => {
             "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80"
           }
           alt={recipe?.title}
-          className="w-full h-[250px] object-cover rounded-t-md"
+          className="w-full sm:h-[250px] h-[200px] object-cover rounded-t-md"
         />
         <img
           src={recipe?.image}
           alt={recipe?.title}
-          className="w-full h-[250px] object-cover rounded-t-md absolute top-0 left-0 blur-[5px] -z-10"
+          className="w-full sm:h-[250px] h-[200px] object-cover rounded-t-md absolute top-0 left-0 blur-[5px] -z-10"
         />
       </div>
       <div className="p-5">

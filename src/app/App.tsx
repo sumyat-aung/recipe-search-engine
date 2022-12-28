@@ -1,6 +1,5 @@
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
 
 import { ALAN_API_KEY } from "../key/key";
 import Header from "../components/Header";

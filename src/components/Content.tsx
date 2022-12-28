@@ -10,7 +10,6 @@ import {
 import Feed from "../pages/Feed";
 import Recipe from "../pages/Recipe";
 import Search from "../pages/Search";
-import Diet from "../pages/Diet";
 import RecipeDetail from "../pages/RecipeDetail";
 
 // ! ^ importing ^
@@ -28,7 +27,7 @@ const Content: React.FC = () => {
   // jsx
   return (
     <>
-      <div className="lg:w-[1000px] sm:w-[90%] w-[97%] mt-10 sticky top-0 bg-gray-100 pb-10">
+      <div className="lg:w-[1000px] sm:w-[90%] w-[100%] mt-10 sticky top-0 bg-gray-100 pb-10 z-30">
         <form className="relative" onSubmit={(e) => searchRecipe(e)}>
           <input
             type="text"
@@ -42,12 +41,6 @@ const Content: React.FC = () => {
           ></i>
         </form>
         <div className="w-full mt-5 lg:justify-between justify-center gap-3 sm:gap-5 items-center flex flex-wrap">
-          <NavLink
-            to={"/diet"}
-            className="text-gray-800 text-lg font-fira px-3 rounded-lg border hover:bg-gray-300 font-semibold border-gray-600 mt-3"
-          >
-            Diet Food
-          </NavLink>
           <NavLink
             to={"/vegetarian"}
             className="text-gray-800 text-lg font-fira px-3 rounded-lg border border-gray-600 mt-3  hover:bg-gray-300 font-semibold"
@@ -74,13 +67,9 @@ const Content: React.FC = () => {
           </NavLink>
         </div>
       </div>
-      <div className="lg:w-[1000px] sm:w-[90%] w-[97%] pb-10 relative -z-20">
+      <div className="lg:w-[1000px] sm:w-[90%] w-[97%] pb-10 relative">
         <Routes>
           <Route path="/" element={<Feed />} />
-          <Route path="/diet" element={<Diet />} />
-          <Route path="/:name" element={<Recipe />} />
-          <Route path="/:name" element={<Recipe />} />
-          <Route path="/:name" element={<Recipe />} />
           <Route path="/:name" element={<Recipe />} />
           <Route path="/search/:q" element={<Search />} />
           <Route path="*" element={<Navigate to={"/"} />} />
