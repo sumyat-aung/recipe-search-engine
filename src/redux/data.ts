@@ -12,7 +12,7 @@ export const recipeApi = createApi({
         // for feed
         getSearchResult: builder.query({
             query: (q) => ({
-                url: `recipes/complexSearch?apiKey=${FOOD_API_KEY}&query=${q}`,
+                url: `recipes/complexSearch?apiKey=${FOOD_API_KEY}&query=${q}&number=100`,
             }),
         }),
 
@@ -23,6 +23,12 @@ export const recipeApi = createApi({
             }),
         }),
 
+        // for details
+        getDetails: builder.query({
+            query: (q) => ({
+                url: `recipes/${q}/information?apiKey=${FOOD_API_KEY}`,
+            }),
+        }),
 
     }),
 });
@@ -30,4 +36,7 @@ export const recipeApi = createApi({
 export const {
     useGetSearchResultQuery,
     useGetCountryFoodQuery,
+    useGetDetailsQuery
 } = recipeApi;
+
+

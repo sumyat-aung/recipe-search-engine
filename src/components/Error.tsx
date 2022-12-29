@@ -1,6 +1,6 @@
 import React from "react";
 
-const Error = () => {
+const Error: React.FC = () => {
   return (
     <div className="flex justify-center items-center w-full h-[300px] font-fira font-semibold">
       <i className="fa-solid fa-circle-exclamation text-red-700 text-xl mr-5"></i>

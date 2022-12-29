@@ -2,6 +2,7 @@ import React, { FormEvent, useRef } from "react";
 import {
   Navigate,
   NavLink,
+  Outlet,
   Route,
   Routes,
   useNavigate,
@@ -26,10 +27,17 @@ const Content: React.FC = () => {
     }
   };
 
+  const pattern = /^\/recipe\/\d+$/;
+  const detailPage: boolean = pattern.test(window.location.pathname);
+
   // jsx
   return (
     <>
-      <div className="lg:w-[1000px] sm:w-[90%] w-[100%] mt-10 sticky top-0 bg-gray-100 pb-10 z-30">
+      <div
+        className={`lg:w-[1000px] sm:w-[90%] w-[100%] mt-10 ${
+          detailPage ? "relative" : "sticky top-0"
+        }  bg-gray-100 pb-10 z-30`}
+      >
         <form className="relative" onSubmit={(e) => searchRecipe(e)}>
           <input
             type="text"
