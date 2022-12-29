@@ -21,6 +21,8 @@ const Content: React.FC = () => {
     e.preventDefault();
     if (inputRef.current!.value) {
       navigate(`/search/${inputRef.current!.value}`);
+    } else {
+      navigate("/");
     }
   };
 

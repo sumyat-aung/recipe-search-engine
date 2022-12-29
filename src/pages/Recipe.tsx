@@ -11,8 +11,8 @@ import RecipeCard from "../components/RecipeCard";
 const Recipe: React.FC = () => {
   const { name } = useParams();
   const { data, isFetching, isError } = useGetCountryFoodQuery(name);
-  console.log(useGetCountryFoodQuery(name));
 
+  // jsx
   return (
     <div>
       {isFetching && <Loading />}

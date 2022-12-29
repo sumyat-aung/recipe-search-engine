@@ -6,16 +6,13 @@ export const recipeApi = createApi({
     reducerPath: "youtubeApi",
     baseQuery: fetchBaseQuery({
         baseUrl: `https://api.spoonacular.com/`, //added base url
-        // prepareHeaders: (headers) => {
-        //     headers.set("Content-Type": application/json);
-        //     return headers;
-        // },
+
     }),
     endpoints: (builder) => ({
         // for feed
         getSearchResult: builder.query({
             query: (q) => ({
-                url: `recipes/complexSearch?apiKey=${FOOD_API_KEY}&query=${q}&number=50`,
+                url: `recipes/complexSearch?apiKey=${FOOD_API_KEY}&query=${q}`,
             }),
         }),
 
@@ -34,6 +31,3 @@ export const {
     useGetSearchResultQuery,
     useGetCountryFoodQuery,
 } = recipeApi;
-
-
-// recipes/random?number=1&tags=vegetarian,dessert

@@ -28,15 +28,12 @@ const RecipeCard = ({ recipe }: any) => {
       <div className="p-5">
         <h1 className="truncate font-fira font-semibold ">{recipe?.title}</h1>
         <div className="flex gap-2 ">
-          {recipe?.cuisines?.map((c: string) => (
-            <>
-              <h2
-                className="truncate mt-1 font-fira text-gray-800 text-xs font-semibold"
-                key={c}
-              >
+          {recipe?.cuisines?.map((c: string, i: number) => (
+            <div key={i}>
+              <h2 className="truncate mt-1 font-fira text-gray-800 text-xs font-semibold">
                 {"/"} {c}
               </h2>
-            </>
+            </div>
           ))}
         </div>
       </div>

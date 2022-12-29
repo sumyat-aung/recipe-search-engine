@@ -5,15 +5,21 @@ import Error from "../components/Error";
 import Loading from "../components/Loading";
 import RecipeCard from "../components/RecipeCard";
 
-const Search = () => {
+const Search: React.FC = () => {
   const { q } = useParams();
   const { data, isFetching, isError } = useGetCountryFoodQuery(q);
-  console.log(useGetCountryFoodQuery(q));
 
   return (
     <div>
       {isFetching && <Loading />}
       {isError && <Error />}
+
+      {data?.recipes?.length > 0 && !isFetching && !isError && (
+        <h1 className="text-xl font-fira mb-5 font-semibold">
+          Search Result for: {q}
+        </h1>
+      )}
+
       {data && !isFetching && !isError && (
         <div className="flex flex-wrap gap-5 justify-center items-center">
           {data?.recipes?.map((r: { id: any }) => {
