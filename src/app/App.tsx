@@ -4,17 +4,30 @@ import { useEffect } from "react";
 import { ALAN_API_KEY } from "../key/key";
 import Header from "../components/Header";
 import Content from "../components/Content";
+import { useNavigate } from "react-router-dom";
 
 // ! ^ importing ^
 
 const App: React.FC = () => {
   // Alan
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     alanBtn({
       key: ALAN_API_KEY,
-      onCommand: ({ command }: any) => {
-        if (command === "go back") {
-          alert("this code got excuted");
+      onCommand: function (commandData: any) {
+        if (commandData.command === "italian") {
+          navigate("/italian");
+        }
+        if (commandData.command === "indian") {
+          navigate("/indian");
+        }
+        if (commandData.command === "mexican") {
+          navigate("/mexican");
+        }
+        if (commandData.command === "vegetarian") {
+          navigate("/vegetarian");
         }
       },
     });

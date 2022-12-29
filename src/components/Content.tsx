@@ -67,7 +67,7 @@ const Content: React.FC = () => {
             to={"/indian "}
             className="text-gray-800 text-lg font-fira px-3 rounded-lg border border-gray-600 mt-3  hover:bg-gray-300 font-semibold"
           >
-            India Food
+            Indian Food
           </NavLink>
           <NavLink
             to={"/mexican"}
