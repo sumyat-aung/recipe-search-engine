@@ -3,6 +3,7 @@ import Modal from "react-modal";
 
 import banner from "../assets/banner.jpg";
 import SettingModal from "./SettingModal";
+import { useEffect } from "react";
 
 // ! ^ importing ^
 
@@ -28,6 +29,23 @@ const Header: React.FC = () => {
       zIndex: 1000,
     },
   };
+
+  // disable the window scroll when click is true
+
+  function disableScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+  }
+
+  function enableScroll() {
+    window.onscroll = function () {};
+  }
+
+  isModalOpen && disableScroll();
+  isModalOpen === false && enableScroll();
 
   // jsx
   return (

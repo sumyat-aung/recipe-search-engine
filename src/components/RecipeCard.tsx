@@ -1,5 +1,4 @@
-import React from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // ! ^ importing ^
 
