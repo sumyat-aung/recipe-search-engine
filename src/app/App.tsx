@@ -29,6 +29,9 @@ const App: React.FC = () => {
         if (commandData.command === "vegetarian") {
           navigate("/vegetarian");
         }
+        if (commandData.command === "search") {
+          navigate(`/search/${commandData.route}`);
+        }
       },
     });
   }, []);
